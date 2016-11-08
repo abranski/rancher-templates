@@ -21,10 +21,10 @@ nginx-proxy:
     io.rancher.sidekicks: nginx-proxy-conf,kibana4
   external_links:
     - ${elasticsearch_source}:elasticsearch
-kibana4:
+kibana5:
   restart: always
   tty: true
-  image: kibana:4.1.1
+  image: kibana:5.0.0
   net: "container:nginx-proxy"
   stdin_open: true
   environment:
