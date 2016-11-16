@@ -1,7 +1,7 @@
 sentry-postgres:
   environment:
     POSTGRES_USER: sentry
-    POSTGRES_PASSWORD: secret
+    POSTGRES_PASSWORD: ${sentry_db_password}
     PGDATA: /data/postgres/data
   log_driver: ''
   labels:
@@ -49,6 +49,7 @@ sentry:
     SENTRY_EMAIL_USER: ${sentry_email_user}
     SENTRY_SECRET_KEY: ${sentry_secret_key}
     SENTRY_SERVER_EMAIL: ${sentry_server_email}
+    SENTRY_DB_PASSWORD: ${sentry_db_password}
   log_driver: ''
   labels:
     io.rancher.container.pull_image: always
@@ -71,6 +72,7 @@ sentry-worker:
     SENTRY_EMAIL_USER: ${sentry_email_user}
     SENTRY_SECRET_KEY: ${sentry_secret_key}
     SENTRY_SERVER_EMAIL: ${sentry_server_email}
+    SENTRY_DB_PASSWORD: ${sentry_db_password}
   log_driver: ''
   labels:
     io.rancher.scheduler.global: 'true'
