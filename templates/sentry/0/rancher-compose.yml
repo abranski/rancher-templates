@@ -64,6 +64,12 @@
       label: "SENTRY_EMAIL_PORT"
       description: "Port of the smtp server. see https://hub.docker.com/_/sentry/ for more info"
 
+    - variable: "sentry_db_user"
+      type: "string"
+      required: true
+      label: "SENTRY_DB_USER"
+      description: "Sentry db username"
+
     - variable: "sentry_db_password"
       type: "password"
       required: true
@@ -74,5 +80,11 @@
       type: "string"
       required: false
       label: "SENTRY_POSTGRES_HOST"
-      description: "Sentry db password"
+      description: "Sentry postgres host"
+
+    - variable: "sentry_postgres_port"
+      type: "int"
+      required: false
+      label: "SENTRY_POSTGRES_PORT"
+      description: "Sentry postgres port"
 
