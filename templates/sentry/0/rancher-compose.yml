@@ -66,6 +66,6 @@
 
     - variable: "sentry_db_password"
       type: "password"
-      required: false
+      required: true
       label: "SENTRY_DB_PASSWORD"
       description: "Sentry db password"
