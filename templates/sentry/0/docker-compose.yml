@@ -21,7 +21,7 @@ sentry-cron:
     SENTRY_DB_PASSWORD: ${sentry_db_password}
     SENTRY_DB_USER: ${sentry_db_user}
     SENTRY_POSTGRES_HOST: ${sentry_postgres_host}
-    SENTRY_POSTGRES_PORT: ${sentry_postgres_port}
+    SENTRY_POSTGRES_PORT: '${sentry_postgres_port}'
   log_driver: ''
   labels:
     io.rancher.container.pull_image: always
@@ -56,7 +56,7 @@ sentry:
     SENTRY_DB_PASSWORD: ${sentry_db_password}
     SENTRY_DB_USER: ${sentry_db_user}
     SENTRY_POSTGRES_HOST: ${sentry_postgres_host}
-    SENTRY_POSTGRES_PORT: ${sentry_postgres_port}
+    SENTRY_POSTGRES_PORT: '${sentry_postgres_port}'
   log_driver: ''
   labels:
     io.rancher.container.pull_image: always
@@ -82,7 +82,7 @@ sentry-worker:
     SENTRY_DB_PASSWORD: ${sentry_db_password}
     SENTRY_DB_USER: ${sentry_db_user}
     SENTRY_POSTGRES_HOST: ${sentry_postgres_host}
-    SENTRY_POSTGRES_PORT: ${sentry_postgres_port}
+    SENTRY_POSTGRES_PORT: '${sentry_postgres_port}'
   log_driver: ''
   labels:
     io.rancher.scheduler.global: 'true'
