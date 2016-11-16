@@ -69,3 +69,10 @@
       required: true
       label: "SENTRY_DB_PASSWORD"
       description: "Sentry db password"
+
+    - variable: "sentry_postgres_host"
+      type: "string"
+      required: false
+      label: "SENTRY_POSTGRES_HOST"
+      description: "Sentry db password"
+

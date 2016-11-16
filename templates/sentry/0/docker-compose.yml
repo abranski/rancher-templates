@@ -19,6 +19,7 @@ sentry-cron:
     SENTRY_SECRET_KEY: ${sentry_secret_key}
     SENTRY_SERVER_EMAIL: ${sentry_server_email}
     SENTRY_DB_PASSWORD: ${sentry_db_password}
+    SENTRY_POSTGRES_HOST: ${sentry_postgres_host}
   log_driver: ''
   labels:
     io.rancher.container.pull_image: always
@@ -29,7 +30,7 @@ sentry-cron:
   log_opt: {}
   image: sentry:8.10.0
   links:
-  - sentry-postgres:postgres
+  - sentry-postgres:${sentry_postgres_host}
   - sentry-redis:redis
   stdin_open: true
 sentry-redis:
@@ -51,6 +52,7 @@ sentry:
     SENTRY_SECRET_KEY: ${sentry_secret_key}
     SENTRY_SERVER_EMAIL: ${sentry_server_email}
     SENTRY_DB_PASSWORD: ${sentry_db_password}
+    SENTRY_POSTGRES_HOST: ${sentry_postgres_host}
   log_driver: ''
   labels:
     io.rancher.container.pull_image: always
@@ -62,7 +64,7 @@ sentry:
   log_opt: {}
   image: sentry:8.10.0
   links:
-  - sentry-postgres:postgres
+  - sentry-postgres:${sentry_postgres_host}
   - sentry-redis:redis
   stdin_open: true
 sentry-worker:
@@ -74,6 +76,7 @@ sentry-worker:
     SENTRY_SECRET_KEY: ${sentry_secret_key}
     SENTRY_SERVER_EMAIL: ${sentry_server_email}
     SENTRY_DB_PASSWORD: ${sentry_db_password}
+    SENTRY_POSTGRES_HOST: ${sentry_postgres_host}
   log_driver: ''
   labels:
     io.rancher.scheduler.global: 'true'
@@ -85,6 +88,6 @@ sentry-worker:
   log_opt: {}
   image: sentry:8.10.0
   links:
-  - sentry-postgres:postgres
+  - sentry-postgres:${sentry_postgres_host}
   - sentry-redis:redis
   stdin_open: true
