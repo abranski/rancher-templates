@@ -18,6 +18,7 @@ sentry-cron:
     SENTRY_EMAIL_USER: ${sentry_email_user}
     SENTRY_SECRET_KEY: ${sentry_secret_key}
     SENTRY_SERVER_EMAIL: ${sentry_server_email}
+    SENTRY_DB_PASSWORD: ${sentry_db_password}
   log_driver: ''
   labels:
     io.rancher.container.pull_image: always
